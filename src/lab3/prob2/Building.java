@@ -31,7 +31,7 @@ public class Building {
 		apartments.add(apt);
 	}
 	
-	public double getBldgProfit() {
+	public double getBuildingProfit() {
 		double totalProfit = 0;
 		for(Apartment apt : apartments) {
 			totalProfit += apt.getRent();

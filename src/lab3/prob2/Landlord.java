@@ -25,10 +25,10 @@ class Landlord {
 		buildings.add(bld);
 	}
 	
-	public double getProfit() {
+	public double getTotalProfit() {
 		double totalProfit = 0;
 		for(Building bldg : buildings) {
-			totalProfit += bldg.getBldgProfit();
+			totalProfit += bldg.getBuildingProfit();
 		}
 		return totalProfit;
 	}
@@ -44,6 +44,6 @@ class Landlord {
 		
 		Landlord samita = new Landlord("Samita", b1);
 		samita.addBuilding(b2);
-		System.out.println(samita.getProfit());
+		System.out.println(samita.getTotalProfit());
 	}
 }

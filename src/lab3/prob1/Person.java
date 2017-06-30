@@ -1,4 +1,4 @@
-package lab3;
+package lab3.prob1;
 
 
 public class Person {

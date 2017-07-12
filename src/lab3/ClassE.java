@@ -28,13 +28,14 @@ public class ClassE {
 	}
 	
 	public static void main(String[] args) {
-		new SubClass();
+		new SubClass(50);
 
 	}
 
 }
 
 class SubClass extends ClassE {
+	int x = 9;
 	static int subInt = subIntMethod();
 	
 	static int subIntMethod(){
@@ -54,6 +55,9 @@ class SubClass extends ClassE {
 	
 	SubClass(){
 		System.out.println("10-Running subclass constructor");
+	}
+	SubClass(int x) {
+		System.out.println(this.x);
 	}
 	
 	{

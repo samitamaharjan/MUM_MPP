@@ -8,8 +8,9 @@ public class RubberDuck extends Duck{
 	}
 	
 	public RubberDuck() {
-		setFly(new CannotFly());
+		//setFly(new CannotFly());
+		this.flyBehavior = new CannotFly();
+		this.quackBehavior = new Sneak();
 		setQuack(new Sneak());
-		
 	}
 }

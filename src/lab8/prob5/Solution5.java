@@ -1,7 +1,9 @@
 package lab8.prob5;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class Solution5 {
@@ -24,14 +26,21 @@ public class Solution5 {
 		// a. Use Arrays.sort()to sort the names by ignore case using Method reference. 
 		
 		// Arrays.sort(names);
-		Function<String[], String[]> f = new Function<String[], String[]>() {
+		/*Function<String[], String[]> f = new Function<String[], String[]>() {
 
 			@Override
 			public String[] apply(String[] t) {
 				Arrays.sort(names);
 				return names;
 			}
+		};*/
+		/*Function<String[], String[]> f = arr -> {
+			Arrays.sort(arr);
+			return arr;
 		};
+		*/
+		
+		Arrays.sort(names, String::compareToIgnoreCase);				
 		System.out.println(Arrays.toString(names));
 	}
 }

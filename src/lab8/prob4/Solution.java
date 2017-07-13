@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 
 public class Solution {
 	public static void main(String[] args) {
@@ -52,17 +53,11 @@ public class Solution {
 		System.out.println(productList);
 		
 		// e. If the title is same use model as another attribute to sort
-		Comparator<Product> compareTitle = (o1, o2) -> {
-			int sortTitle = o1.getTitle().compareTo(o2.getTitle());
-			if (sortTitle == 0) {
-				return (int) (o1.getModel() - o2.getModel());
-			} else {
-				return sortTitle;
-			}
-		};
+		Function<Product, Integer> byModel = model -> model.getModel();
+		Function<Product, String> byTitle = title -> title.getTitle();
+		Collections.sort(productList, Comparator.comparing(byTitle).thenComparing(byModel));
 		
 		System.out.println("Sorted By Title first then model");
-		Collections.sort(productList, compareTitle);
 		System.out.println(productList);
 		
 	}

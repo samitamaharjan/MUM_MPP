@@ -18,10 +18,10 @@ public class Main {
 		
 		//your stream pipeline here
 		String s = list.stream()
-		.filter(sal -> sal.getSalary() > 100000)
-		.filter(name -> name.getLastName().)
+		.filter(emp -> emp.getLastName().matches("[N-Z].*"))
+		.filter(emp -> emp.getSalary() > 100000)
+		.sorted(Comparator.comparing(Employee::getLastName))
 		.map(emp -> emp.getFirstName() + " " + emp.getLastName())
-		.sorted()
 		.collect(Collectors.joining(", "));
 		
 		System.out.println(s);

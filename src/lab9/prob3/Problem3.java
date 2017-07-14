@@ -7,7 +7,7 @@ public class Problem3 {
 	public static int countWords(List<String> words, char c, char d, int len) {
 		int count = (int) words.stream()
 				.filter(w -> w.length() == len)
-				.filter(w -> w.indexOf(c) > 0)
+				.filter(w -> w.indexOf(c) >= 0)
 				.filter(w -> w.indexOf(d) == -1)
 				.count();
 		return count;

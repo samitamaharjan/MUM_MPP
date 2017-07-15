@@ -12,7 +12,7 @@ public class Solution5 {
 		
 		// a. Print the given list using forEach with Lambdas
 		System.out.println("Using Lambdas:");
-		fruits.forEach((s) -> System.out.println(s));
+		fruits.forEach(s -> System.out.println(s));
 		
 		// b. Print the given list using method reference
 		System.out.println("Using method reference:");

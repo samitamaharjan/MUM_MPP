@@ -56,6 +56,7 @@ public class Solution {
 		Function<Product, Integer> byModel = model -> model.getModel();
 		Function<Product, String> byTitle = title -> title.getTitle();
 		Collections.sort(productList, Comparator.comparing(byTitle).thenComparing(byModel));
+		Collections.sort(productList, Comparator.comparing(Product::getTitle).thenComparing(Product::getModel));
 		
 		System.out.println("Sorted By Title first then model");
 		System.out.println(productList);

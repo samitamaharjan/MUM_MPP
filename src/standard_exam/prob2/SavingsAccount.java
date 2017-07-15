@@ -2,12 +2,12 @@ package standard_exam.prob2;
 
 public class SavingsAccount extends Account{
 	private double balance;
-	private double monthlyFee;
+	private double interestRate;
 	private String acctId;
 	
-	public SavingsAccount(String acctId, double fee, double startBalance) {
+	public SavingsAccount(String acctId, double interestRate, double startBalance) {
 		this.acctId = acctId;
-		this.monthlyFee = fee;
+		this.interestRate = interestRate;
 		this.balance = startBalance;
 	}
 	
@@ -23,6 +23,6 @@ public class SavingsAccount extends Account{
 
 	@Override
 	double computeUpdatedBalance() {
-		return balance - monthlyFee;
+		return balance + (interestRate * balance);
 	}
 }

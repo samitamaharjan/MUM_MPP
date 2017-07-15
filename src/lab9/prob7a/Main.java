@@ -20,8 +20,8 @@ public class Main {
 		String s = list.stream()
 		.filter(emp -> emp.getLastName().matches("[N-Z].*"))
 		.filter(emp -> emp.getSalary() > 100000)
-		.sorted(Comparator.comparing(Employee::getLastName))
 		.map(emp -> emp.getFirstName() + " " + emp.getLastName())
+		.sorted()
 		.collect(Collectors.joining(", "));
 		
 		System.out.println(s);

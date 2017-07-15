@@ -100,7 +100,7 @@ public class ConstructorReference {
 		return humanList;		
 	}
 	
-	interface MyFunction<T, R, U, S> {
-		S myFunction(T name, R age, U gender);
+	interface MyFunction<S, T, U, R> {
+		R myFunction(S name, T age, U gender);
 	}
 }

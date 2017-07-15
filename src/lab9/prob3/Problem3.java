@@ -18,4 +18,5 @@ public class Problem3 {
 		System.out.println(countWords(list, 'P', 'F', 3));
 	}
 
+	better one is remaining
 }

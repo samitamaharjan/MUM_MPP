@@ -1,4 +1,4 @@
-package lab9.prob7b;
+package lab9.prob7bSamita;
 
 public class Employee {
 	String firstName, lastName;
@@ -20,7 +20,7 @@ public class Employee {
 		sb.append(lastName);
 		sb.append(" salary: ");
 		sb.append("" + salary+">");
-		return sb.toString();		
+		return sb.toString();
 	}
 
 	public String getFirstName() {

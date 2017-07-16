@@ -13,8 +13,9 @@ public class Capture {
 			System.out.println(list.get(i));
 		}
 	}
+	
 	public static void main(String[] args) {
-		 List<String> list = Arrays.asList("Java", "MPP", "SE");
+		 List<String> list = Arrays.asList("Java", "MPP", "SE", "Data");
 		 reverse(list);
 		 
 		 List<Integer> list1 = Arrays.asList(1, 2, 3);

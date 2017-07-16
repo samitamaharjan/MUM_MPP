@@ -1,8 +1,4 @@
-package lab10;
-
-//package whatever; // don't place package name!
-
-import java.io.*;
+package generic_practice;
 
 class MyCode {
  public static void main (String[] args) {

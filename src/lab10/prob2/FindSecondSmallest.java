@@ -19,7 +19,13 @@ public class FindSecondSmallest {
 	}
 	
 	public static void main(String[] args) {
-		List<Integer> list = Arrays.asList(5, 26, 4, 8, 62, 30, 100);
-		System.out.println(secondMax(list));
+		List<Integer> list1 = Arrays.asList(5, 26, 4, 8, 62, 30, 100);
+		System.out.println(secondMax(list1));
+		
+		List<Double> list2 = Arrays.asList(5.0, 26.0, 4.0, 8.0, 62.0, 30.0, 100.0);
+		System.out.println(secondMax(list2));
+		
+		List<String> list3 = Arrays.asList("A", "B", "C", "S", "P");
+		System.out.println(secondMax(list3));
 	}
 }

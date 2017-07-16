@@ -16,10 +16,11 @@ public class BetterStreamResuse {
 			.count();
 	
 	public static void main(String[] args) {
-		List<String> list = Arrays.asList("MPP", "FPP", "SAMITA", "FPA", "FA", "SPP");
+		List<String> list = Arrays.asList("MPP", "FPP", "SAMITA", "FPA", "FA", "SPP", "FP");
 		System.out.println(COUNTWORDS.apply(list, 'P', 'F', 3));
+		System.out.println(COUNTWORDS.apply(list, 'S', 'F', 6));
+		System.out.println(COUNTWORDS.apply(list, 'F', 'P', 2));
 	}
 }
-
 
 

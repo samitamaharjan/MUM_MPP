@@ -12,9 +12,10 @@ public class GoodStreamResuse {
 				.count();
 		return count;
 	}
-
+	
 	public static void main(String[] args) {
 		List<String> list = Arrays.asList("MPP", "FPP", "SAMITA", "FPA", "FA", "SPP");
 		System.out.println(countWords(list, 'P', 'F', 3));
+		System.out.println(countWords(list, 'A', 'F', 6));
 	}
 }

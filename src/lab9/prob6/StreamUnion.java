@@ -16,9 +16,12 @@ public class StreamUnion {
 		return s;
 	}
 	
-	/*public static Set<String> union1(List<Set<String>> sets) {
-		Set<String> s= sets.stream().flatMap(x -> x.stream()).collect(Collectors.toSet());
-		return s;
+	/* Alternative Method:
+	 * public static Set<String> union(List<Set<String>> sets) {
+			Set<String> s= sets.stream()
+				.flatMap(x -> x.stream())
+				.collect(Collectors.toSet());
+			return s;
 	}*/
 	
 	public static void main(String[] args) {

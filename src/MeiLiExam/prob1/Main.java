@@ -1,11 +1,12 @@
 package MeiLiExam.prob1;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Main {
 		
@@ -61,6 +62,23 @@ public class Main {
 			}
 		};
 		
+		Comparator<LibraryMember> sortedByName = new Comparator<LibraryMember>() {
+
+			@Override
+			public int compare(LibraryMember o1, LibraryMember o2) {
+				return o1.getFirstName().compareTo(o2.getFirstName());
+			}
+		}; 
+		
+		Consumer<LibraryMember> print = new Consumer<LibraryMember>() {
+
+			@Override
+			public void accept(LibraryMember member) {
+				System.out.println(member);
+			}
+		};
+		
+		System.out.println("\nUsing anonymous class");
 		String names2 = sampleData.stream()
 				.filter(filterbyState)
 				.filter(filterbyLetterM)
@@ -68,6 +86,10 @@ public class Main {
 				.collect(Collectors.joining(" "));
 		System.out.println(names2);
 		
+		System.out.println("\nUsing sort");
+		sampleData.stream()
+				.sorted(sortedByName)
+				.forEach(print);
 		
 		System.out.println("\n Part D");
 		//Extra Credit: Create a stream pipeline that uses the reduce method 

@@ -2,7 +2,10 @@ package MeiLiExam.prob1;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
 		
@@ -34,6 +37,36 @@ public class Main {
 		System.out.println("\n Part C");
 		//Replace all lambda expressions in the stream pipeline from Part A 
 		//with instances of inner classes/functors.
+		Predicate<LibraryMember> filterbyState = new Predicate<LibraryMember>() {
+
+			@Override
+			public boolean test(LibraryMember member) {
+				return member.getAddress().getState().equalsIgnoreCase("CA");
+			}
+		};
+		
+		Predicate<LibraryMember> filterbyLetterM = new Predicate<LibraryMember>() {
+
+			@Override
+			public boolean test(LibraryMember member) {
+				return member.getFirstName().charAt(0) > 'M';
+			}
+		};
+		
+		Function<LibraryMember, String> map = new Function<LibraryMember, String>() {
+
+			@Override
+			public String apply(LibraryMember member) {
+				return member.getFirstName() + " " + member.getLastName();
+			}
+		};
+		
+		String names2 = sampleData.stream()
+				.filter(filterbyState)
+				.filter(filterbyLetterM)
+				.map(map)
+				.collect(Collectors.joining(" "));
+		System.out.println(names2);
 		
 		
 		System.out.println("\n Part D");

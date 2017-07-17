@@ -6,14 +6,12 @@ import java.util.stream.Collectors;
 
 import QuizJuly.quizclasses.Employee;
 import QuizJuly.quizclasses.EmployeeTestData;
-import QuizJuly.quizclasses.Pair;
 import QuizJuly.quizclasses.Trader;
 import QuizJuly.quizclasses.TraderTransactTestData;
 import QuizJuly.quizclasses.Transaction;
 
 /** USE STREAM PIPELINES TO SOLVE THE PROBLEMS HERE */
 public class Main {
-	@SuppressWarnings("serial")
 	public static void main(String[] args) {
 		System.out.println("Sample Query");
 		List<Employee> sampleData = EmployeeTestData.getList();
@@ -35,27 +33,21 @@ public class Main {
 	//for which salary > 55000 and less than 120000, in ascending
 	//order of name, then descending order of salary
 	//Then print the list to the console
+	
 	public static void prob1() {
 		//use this list
 		List<Employee> list = EmployeeTestData.getList();
 		List<Pair> result = list.stream()
 			.filter(emp -> emp.getSalary() > 55000 && emp.getSalary() < 120000)
-			.sorted(Comparator.comparing(Employee::getName).thenComparing(emp -> -emp.getSalary()))
+			// .sorted(Comparator.comparing(Employee::getName).thenComparing(emp -> -emp.getSalary()))
 			.map(emp -> new Pair(emp.getName(), emp.getSalary()))
+			.sorted(Comparator.comparing(Pair::getKey).thenComparing(p -> -p.getValue()))
 			.collect(Collectors.toList());
 
 		System.out.println(result);
 		System.out.println();
 		
-		class Pair {
-			String key;
-			int value;
-			
-			public Pair(String key, int value) {
-				this.key = key;
-				this.value = value;
-			}			
-		}
+		
 	}
 
 	//Create a stream pipeline to find all transactions from year 2011
@@ -87,5 +79,28 @@ public class Main {
 
 		System.out.println(result);
 
+	}
+}
+
+class Pair {
+	String key;
+	int value;
+	
+	public Pair(String key, int value) {
+		this.key = key;
+		this.value = value;
+	}
+	
+	public String getKey() {
+		return key;
+	}
+	
+	public int getValue() {
+		return value;
+	}
+
+	@Override
+	public String toString() {
+		return key + " " + value;
 	}
 }

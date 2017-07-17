@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import QuizJuly.quizclasses.Employee;
 import QuizJuly.quizclasses.EmployeeTestData;
+import QuizJuly.quizclasses.Pair;
 import QuizJuly.quizclasses.Trader;
 import QuizJuly.quizclasses.TraderTransactTestData;
 import QuizJuly.quizclasses.Transaction;
@@ -41,13 +42,12 @@ public class Main {
 			.filter(emp -> emp.getSalary() > 55000 && emp.getSalary() < 120000)
 			// .sorted(Comparator.comparing(Employee::getName).thenComparing(emp -> -emp.getSalary()))
 			.map(emp -> new Pair(emp.getName(), emp.getSalary()))
-			.sorted(Comparator.comparing(Pair::getKey).thenComparing(p -> -p.getValue()))
+			.sorted(Comparator.comparing((Pair p) -> p.name).thenComparing((Pair p) -> -p.salary))
 			.collect(Collectors.toList());
 
 		System.out.println(result);
 		System.out.println();
-		
-		
+				
 	}
 
 	//Create a stream pipeline to find all transactions from year 2011
@@ -79,28 +79,5 @@ public class Main {
 
 		System.out.println(result);
 
-	}
-}
-
-class Pair {
-	String key;
-	int value;
-	
-	public Pair(String key, int value) {
-		this.key = key;
-		this.value = value;
-	}
-	
-	public String getKey() {
-		return key;
-	}
-	
-	public int getValue() {
-		return value;
-	}
-
-	@Override
-	public String toString() {
-		return key + " " + value;
 	}
 }

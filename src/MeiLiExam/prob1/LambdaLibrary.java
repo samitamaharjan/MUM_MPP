@@ -5,9 +5,9 @@ import java.util.stream.Collectors;
 
 public class LambdaLibrary {
 
-	//public static final String IMPLEMENT = "IMPLEMENT";
+	public static final String IMPLEMENT = "IMPLEMENT";
 	
-	public static final TriFunction<List<LibraryMember>, String, Character, String> IMPLEMENT = 
+	public static final TriFunction<List<LibraryMember>, String, Character, String> SAMPLE = 
 			(list, state, letter) -> list.stream()
 			.filter(member -> member.getAddress().getState().equalsIgnoreCase(state))
 			.filter(member -> member.getFirstName().charAt(0) > letter)

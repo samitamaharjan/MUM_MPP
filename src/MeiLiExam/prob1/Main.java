@@ -33,12 +33,12 @@ public class Main {
 		//Turn the stream pipeline from Part A into a LambdaLibrary item 
 		//and evaluate it here.
 		
-		System.out.println(LambdaLibrary.IMPLEMENT.apply(sampleData, "CA", 'M'));
+		System.out.println(LambdaLibrary.SAMPLE.apply(sampleData, "CA", 'M'));
 				
 		System.out.println("\n Part C");
 		//Replace all lambda expressions in the stream pipeline from Part A 
 		//with instances of inner classes/functors.
-		Predicate<LibraryMember> filterbyState = new Predicate<LibraryMember>() {
+		class FilterByState implements Predicate<LibraryMember> {
 
 			@Override
 			public boolean test(LibraryMember member) {
@@ -46,7 +46,7 @@ public class Main {
 			}
 		};
 		
-		Predicate<LibraryMember> filterbyLetterM = new Predicate<LibraryMember>() {
+		class FilterByLetterM implements Predicate<LibraryMember> {
 
 			@Override
 			public boolean test(LibraryMember member) {
@@ -80,8 +80,8 @@ public class Main {
 		
 		System.out.println("\nUsing anonymous class");
 		String names2 = sampleData.stream()
-				.filter(filterbyState)
-				.filter(filterbyLetterM)
+				.filter(new FilterByState())
+				.filter(new FilterByLetterM())
 				.map(map)
 				.collect(Collectors.joining(" "));
 		System.out.println(names2);

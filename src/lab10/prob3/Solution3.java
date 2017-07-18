@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Solution3 {
-	public static <T extends Number> double sumOfList(List<T> list) {
-		double sum = 0.0;
+	public static <T extends Number> int sumOfList(List<T> list) {
+		int sum = 0;
 		for (T num : list) {
-			sum = sum + num.doubleValue();
+			sum = sum + num.intValue();
 		}
 		return sum;	
 	}

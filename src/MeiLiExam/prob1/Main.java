@@ -3,6 +3,7 @@ package MeiLiExam.prob1;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -70,6 +71,13 @@ public class Main {
 			}
 		}; 
 		
+		/*class SortedName implements Comparator<LibraryMember> {
+			@Override
+			public int compare(LibraryMember m1, LibraryMember m2) {
+				return m1.getFirstName().compareTo(m2.getFirstName());
+			}
+		}*/
+		
 		Consumer<LibraryMember> print = new Consumer<LibraryMember>() {
 
 			@Override
@@ -101,5 +109,13 @@ public class Main {
 		if (mem.isPresent()) {
 			System.out.println(mem.get());
 		}
+		
+		BinaryOperator<LibraryMember> ob = new BinaryOperator<LibraryMember>() {
+
+			@Override
+			public LibraryMember apply(LibraryMember m1, LibraryMember m2) {
+				return m1.getCheckedOutCopies().size() > m2.getCheckedOutCopies().size() ? m1 : m2;
+			}
+		};
 	}
 }

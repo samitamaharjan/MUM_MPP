@@ -22,8 +22,10 @@ public class Product {
 		List<NewPair<K, V>> productList = new ArrayList<>();
 		for (K k : list1) {
 			for (V v : list2) {
+				 // productList.add(new NewPair(k, v)); //OR
 				NewPair<K, V> pair = new NewPair<K, V>(k, v);
 				productList.add(pair);
+				
 			}
 	 	}
 		return productList;

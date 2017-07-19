@@ -1,12 +1,9 @@
 package QuizJuly.lambdalib;
 
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import QuizJuly.quizclasses.Employee;
 import QuizJuly.quizclasses.EmployeeTestData;
-import QuizJuly.quizclasses.Pair;
 import QuizJuly.quizclasses.TraderTransactTestData;
 import QuizJuly.quizclasses.Transaction;
 

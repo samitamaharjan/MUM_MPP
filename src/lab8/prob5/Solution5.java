@@ -23,9 +23,11 @@ public class Solution5 {
 		
 		// a. Use Arrays.sort()to sort the names by ignore case using Method reference. 
 		
-		Arrays.sort(names, String::compareToIgnoreCase);
+		//Arrays.sort(names, String::compareToIgnoreCase);
+		Arrays.sort(names, (s1, s2) -> s1.compareToIgnoreCase(s2) );
 		//System.out.println(Arrays.toString(names));	
 		Function<String[], String> arr = Arrays::toString;
+		// Function<String[], String> arr1 = a -> Arrays.toString(a);
 		System.out.println(arr.apply(names));
 	}
 }

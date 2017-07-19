@@ -52,7 +52,9 @@ public class CityLambda {
 		list.add(new CityLambda("IA", 10000));
 		list.add(new CityLambda("NC", 35000));
 		list.add(new CityLambda("NY", 45000));
-		Collections.sort(list, CityLambda.sortedByName);
+		// Collections.sort(list, CityLambda.sortedByName);
+		// Collections.sort(list, Comparator.comparing(CityLambda::getCname));
+		list.sort(Comparator.comparing(CityLambda::getCname));
 		System.out.println(list);
 	}
 

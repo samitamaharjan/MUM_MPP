@@ -1,9 +1,7 @@
 package MeiLiExam.prob2;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -21,7 +19,7 @@ public class Main {
 		//Task:get all names of customers who live in Fairfield, in sorted order
 		
 		List<String> returnList = list.stream()
-									  .filter(x->x.getCity().equals("Fairfield"))
+									  .filter(x -> x.getCity().equals("Fairfield"))
 									  .map(x -> x.getName())
 									  .sorted()
 									  .collect(Collectors.toList());

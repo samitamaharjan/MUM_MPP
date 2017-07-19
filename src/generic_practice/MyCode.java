@@ -1,5 +1,7 @@
 package generic_practice;
 
+import java.util.List;
+
 class MyCode {
  public static void main (String[] args) {
      Fte fte1 = new Fte("Samita", 12000);
@@ -65,5 +67,12 @@ class Accounts {
      t.printSalary();
      // t.getMonthlySalary(); // Invalid
      // t.getHourlySalary(); // Invalid
+ }
+ 
+ public static <T> void copy(List<? extends T> source, List<? super T> destination) {
+	 for (int i = 0; i < source.size(); i++) {
+		 destination.set(i, source.get(i));
+	 }
+	 T t = source.get(0);
  }
 }

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -11,6 +12,10 @@ class Human {
 	String name;
 	int age;
 	String gender;
+	
+	public Human() {
+		
+	}
 
 	public Human(String name) {
 		this.name = name;
@@ -78,6 +83,9 @@ public class ConstructorReference {
 		// Query 3 : Practice for method reference Classname::new - Create an
 		// object by choosing suitable Interface to the specified
 		// constructors(Totally 3 constuctors) and print the object status
+		Supplier<Human> const0 = Human::new;
+		System.out.println(const0.get());
+		
 		Function<String, Human> const1 = Human::new;
 		System.out.println(const1.apply("samita"));
 		

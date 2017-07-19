@@ -25,6 +25,7 @@ public class Solution {
 		
 		// a. Sorted by price attribute and printed product list
 		Collections.sort(productList, sortByPrice);
+		//Collections.sort(productList, (p1, p2) -> (int) (p1.getPrice() - p2.getPrice()));
 		System.out.println("Sorted By Price:");
 		System.out.println(productList);
 		

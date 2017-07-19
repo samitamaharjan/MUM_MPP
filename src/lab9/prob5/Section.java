@@ -7,8 +7,8 @@ public class Section {
 	public static Stream<String> streamSection(Stream<String> stream, int m, int n) {
 		if (m <= 0 || m >= n) return null;
 		stream.skip(m)
-		.limit(n - m + 1)
-		.forEach(System.out::println);
+			.limit(n - m + 1)
+			.forEach(System.out::println);
 		return stream;
 	}
 

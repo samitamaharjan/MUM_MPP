@@ -39,7 +39,7 @@ public class Main {
 		//use this list
 		List<Employee> list = EmployeeTestData.getList();
 		List<Pair> result = list.stream()
-			.filter(emp -> emp.getSalary() > 55000 && emp.getSalary() < 120000)
+			.filter(emp -> emp.getSalary() > 5500 && emp.getSalary() < 120000)
 			// .sorted(Comparator.comparing(Employee::getName).thenComparing(emp -> -emp.getSalary()))
 			.map(emp -> new Pair(emp.getName(), emp.getSalary()))
 			.sorted(Comparator.comparing((Pair p) -> p.name).thenComparing((Pair p) -> -p.salary))

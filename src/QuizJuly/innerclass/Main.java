@@ -1,7 +1,5 @@
 package QuizJuly.innerclass;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
@@ -10,7 +8,6 @@ import java.util.stream.Collectors;
 
 import QuizJuly.quizclasses.Employee;
 import QuizJuly.quizclasses.EmployeeTestData;
-import QuizJuly.quizclasses.Pair;
 import QuizJuly.quizclasses.Trader;
 import QuizJuly.quizclasses.TraderTransactTestData;
 import QuizJuly.quizclasses.Transaction;

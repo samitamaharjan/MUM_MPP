@@ -19,7 +19,8 @@ public class Book extends LendingItem {
 		Book ob1 = (Book) ob;
 		return ob1.isbn.equals(this.isbn) && ob1.title.equals(this.title)
 				&& ob1.authorFirstName.equals(this.authorFirstName)
-				&& ob1.authorLastName.equals(authorLastName);
+				&& ob1.authorLastName.equals(authorLastName)
+				&& super.equals(ob);
 	}
 	
 	

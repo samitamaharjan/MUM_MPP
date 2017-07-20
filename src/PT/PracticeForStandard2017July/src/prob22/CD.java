@@ -17,7 +17,8 @@ public class CD extends LendingItem {
 		CD ob1 = (CD) ob;
 		return ob1.productId.equals(productId)
 				&& ob1.title.equals(this.title)
-				&& ob1.company.equals(this.company);
+				&& ob1.company.equals(this.company)
+				&& super.equals(ob);
 	}
 	
 	

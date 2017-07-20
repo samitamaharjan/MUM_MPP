@@ -6,4 +6,14 @@ public abstract class Department {
 		return queue;
 	}
 	//implement
+	abstract String getName();
+	
+	public void addMessage(String msg) {
+		queue.enqueue(msg);
+	}
+	
+	public String nextMessage() throws EmptyQueueException {
+		return queue.dequeue();
+	}
 }
+	

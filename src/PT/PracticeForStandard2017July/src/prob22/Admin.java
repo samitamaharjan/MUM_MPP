@@ -11,6 +11,7 @@ public class Admin {
 	public static List<String> getPhoneNums(LibraryMember[] members, LendingItem item) {
 		List<String> phoneNums = new ArrayList<String>();
 			Predicate<LibraryMember> filterby = new Predicate<LibraryMember>() {
+
 				@Override
 				public boolean test(LibraryMember mem) {
 					List<CheckoutRecordEntry> entries =  mem.getCheckoutRecord().getCheckoutEntryList();

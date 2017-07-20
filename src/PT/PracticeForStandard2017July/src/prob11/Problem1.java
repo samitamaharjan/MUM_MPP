@@ -8,12 +8,19 @@ public class Problem1 {
 	//Returns a list of those strings which belong to just one of the two lists
 	//Hint: use concat
 	public static List<String> elementsInJustOne(List<String> list1, List<String> list2) {
-		//implement
-		List<String> list = Stream.concat(list1.stream(), list2.stream())
+		// common elements
+		/*List<String> list = Stream.concat(list1.stream(), list2.stream())
 				.distinct()
 				.filter(l -> list1.contains(l) && list2.contains(l))
 				.collect(Collectors.toList());
-		return list;
+		return list;*/
+		
+		// uncommon elements
+		List<String> newList = Stream.concat(list1.stream(), list2.stream())
+				.distinct()
+				.filter(l -> (list1.contains(l) && !list2.contains(l)) || (list2.contains(l) && !list1.contains(l)))
+				.collect(Collectors.toList());
+		return newList;
 	}
 	
 	//Returns a list, in sorted order, of the names of the Customers in the input list who live in Fairfield

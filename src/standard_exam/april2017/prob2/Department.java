@@ -12,8 +12,16 @@ public abstract class Department {
 		queue.enqueue(msg);
 	}
 	
-	public String nextMessage() throws EmptyQueueException {
-		return queue.dequeue();
+	public String nextMessage() {
+		String str = "";
+		try {
+			str = queue.dequeue();
+		} catch (EmptyQueueException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return str;
 	}
 }
 	

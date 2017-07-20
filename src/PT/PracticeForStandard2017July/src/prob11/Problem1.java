@@ -18,7 +18,8 @@ public class Problem1 {
 		// uncommon elements
 		List<String> newList = Stream.concat(list1.stream(), list2.stream())
 				.distinct()
-				.filter(l -> (list1.contains(l) && !list2.contains(l)) || (list2.contains(l) && !list1.contains(l)))
+				.filter(l -> (list1.contains(l) && !list2.contains(l))
+						|| (list2.contains(l) && !list1.contains(l)))
 				.collect(Collectors.toList());
 		return newList;
 	}

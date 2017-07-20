@@ -1,11 +1,13 @@
 package standard_exam.Final2015July.prob33;
 
-import helperclasses.Book;
-import helperclasses.LibraryMember;
-import helperclasses.TestData;
+
 
 import java.util.Iterator;
 import java.util.List;
+
+import standard_exam.Final2015July.helperclasses1.Book;
+import standard_exam.Final2015July.helperclasses1.LibraryMember;
+import standard_exam.Final2015July.helperclasses1.TestData;
 public class Problem3 {
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {

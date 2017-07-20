@@ -1,12 +1,14 @@
-package Final2015July.src.prob4;
+package standard_exam.Final2015July.prob4;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Problem4 {
 	//IMPLEMENT
 	public static <T> ArrayList<T> combine(Stream<ArrayList<T>> stream) {
-		return new ArrayList<T>();	 
+		return (ArrayList<T>) stream.flatMap(arr -> arr.stream()).collect(Collectors.toList());
+		// return new ArrayList<T>();	 
 	}
 	
 	public static void testCombine() {
